@@ -25,6 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.composeuitemplates.R
 
 data class Chat(
@@ -49,7 +50,7 @@ const val profile = R.drawable.gojo
 const val isOnline = true
 
 @Composable
-fun ChatScreen() {
+fun ChatScreen(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween
