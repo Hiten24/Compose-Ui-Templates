@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.Card
@@ -17,6 +18,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
@@ -27,15 +29,23 @@ import com.example.composeuitemplates.R
 
 data class Chat(
     val message: String,
-    val time: String
+    val time: String,
+    val isOutgoing: Boolean
 )
 
 val message = mutableStateOf("")
 
-val chats = mutableStateListOf<Chat>()
+val chats = mutableStateListOf<Chat>(
+    Chat("Hi", "10:00 pm", true),
+    Chat("Hello", "10:00 pm", false),
+    Chat("What's up", "10:02 pm", false),
+    Chat("I am fine", "10:02 pm", true),
+    Chat("How are you doing", "10:06 pm", true),
+    Chat("I am good", "10:11 pm", false),
+)
 
-const val username = "Hiten Chawda"
-const val profile = R.drawable.with_mask
+const val username = "Gojo Satoru"
+const val profile = R.drawable.gojo
 const val isOnline = true
 
 @Composable
@@ -83,12 +93,12 @@ fun TopBarSection(
             Image(
                 painter = profile,
                 contentDescription = null,
-                modifier = Modifier.size(42.dp)
+                modifier = Modifier.size(42.dp).clip(CircleShape)
             )
 
             Spacer(modifier = Modifier.width(8.dp))
 
-            Column() {
+            Column {
                 Text(text = username, fontWeight = FontWeight.SemiBold)
                 Text(
                     text = if (isOnline) "Online" else "Offline",
@@ -104,13 +114,13 @@ fun ChatSection(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
-        modifier = modifier.padding(16.dp)
+        modifier = modifier.fillMaxWidth().padding(16.dp),
     ) {
         items(chats) { chat ->
             MessageItem(
                 chat.message,
                 chat.time,
-                true
+                chat.isOutgoing
             )
             Spacer(modifier = Modifier.height(8.dp))
         }
@@ -144,7 +154,7 @@ fun MessageSection() {
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
+                        .padding(horizontal = 16.dp),
                 )
             }
             Spacer(modifier = Modifier.width(16.dp))
@@ -152,7 +162,7 @@ fun MessageSection() {
                 painter = painterResource(id = R.drawable.ic_send),
                 contentDescription = null,
                 Modifier.clickable {
-                    chats.add(Chat(message.value, "10:00 PM"))
+                    chats.add(Chat(message.value, "10:00 PM", true))
                     message.value = ""
                 }
             )
@@ -166,11 +176,14 @@ fun MessageItem(
     time: String,
     isOut: Boolean
 ) {
-    Column {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = if (isOut) Alignment.End else Alignment.Start
+    ) {
         Box(
             modifier = Modifier
                 .background(
-                    MaterialTheme.colors.primary,
+                    if (isOut) MaterialTheme.colors.primary else Color(0xFF616161),
                     shape = RoundedCornerShape(16.dp)
                 )
                 .padding(
