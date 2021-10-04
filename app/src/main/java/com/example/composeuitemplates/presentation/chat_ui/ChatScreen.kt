@@ -1,4 +1,4 @@
-package com.example.composeuitemplates.presentation
+package com.example.composeuitemplates.presentation.chat_ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
