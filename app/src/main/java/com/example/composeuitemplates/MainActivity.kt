@@ -8,7 +8,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.navigation.compose.rememberNavController
 import com.example.composeuitemplates.mainscreen.Navigation
-import com.example.composeuitemplates.presentation.ChatScreen
 import com.example.composeuitemplates.ui.theme.ComposeUiTempletesTheme
 
 class MainActivity : ComponentActivity() {
