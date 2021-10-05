@@ -140,31 +140,31 @@ fun MessageSection() {
         backgroundColor = Color.White,
         elevation = 10.dp
     ) {
-                OutlinedTextField(
-                    placeholder = {
-                        Text("Message..")
-                    },
-                    value = message.value,
-                    onValueChange = {
-                        message.value = it
-                    },
-                    shape = RoundedCornerShape(25.dp),
-                    trailingIcon = {
-                        Icon(
-                            painter = painterResource(id = R.drawable.ic_send, ),
-                            contentDescription = null,
-                            tint = MaterialTheme.colors.primary,
-                            modifier = Modifier.clickable {
-                                chats.add(Chat(message.value, "10:00 PM", true))
-                                message.value = ""
-                            }
-                        )
-
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(6.dp),
+        OutlinedTextField(
+            placeholder = {
+                Text("Message..")
+            },
+            value = message.value,
+            onValueChange = {
+                message.value = it
+            },
+            shape = RoundedCornerShape(25.dp),
+            trailingIcon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_send, ),
+                    contentDescription = null,
+                    tint = MaterialTheme.colors.primary,
+                    modifier = Modifier.clickable {
+                        chats.add(Chat(message.value, "10:00 PM", true))
+                        message.value = ""
+                    }
                 )
+
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(6.dp),
+        )
     }
 }
 
