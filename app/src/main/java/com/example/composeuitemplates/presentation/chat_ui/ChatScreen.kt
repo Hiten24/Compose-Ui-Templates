@@ -10,6 +10,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -58,7 +60,8 @@ fun ChatScreen(navController: NavController) {
         TopBarSection(
             username = username,
             profile = painterResource(id = profile),
-            isOnline = isOnline
+            isOnline = isOnline,
+            onBack = { navController.navigateUp() }
         )
         ChatSection(Modifier.weight(1f))
         MessageSection()
@@ -70,6 +73,7 @@ fun TopBarSection(
     username: String,
     profile: Painter,
     isOnline: Boolean,
+    onBack: () -> Unit
 ) {
     Card(
         modifier = Modifier
@@ -84,10 +88,15 @@ fun TopBarSection(
                 .padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                painter = painterResource(id = R.drawable.ic_arrow_left),
-                contentDescription = null
-            )
+            IconButton(
+                onClick = onBack
+            ){
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = "Back"
+                )
+            }
+
 
             Spacer(modifier = Modifier.width(8.dp))
 
