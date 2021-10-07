@@ -1,16 +1,21 @@
 package com.example.composeuitemplates.mainscreen
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.example.composeuitemplates.presentation.chat_ui.ChatScreen
-import com.example.composeuitemplates.presentation.profile_ui.ProfileScreen
 import com.example.composeuitemplates.presentation.ecommerce_ui.EcommerceHomeScreen
 import com.example.composeuitemplates.presentation.ecommerce_ui.ProductScreen
-import com.example.composeuitemplates.presentation.ecommerce_ui.data.Product
+import com.example.composeuitemplates.presentation.login_signup_ui.LoginScreen
+import com.example.composeuitemplates.presentation.login_signup_ui.SignupScreen
+import com.example.composeuitemplates.presentation.profile_ui.ProfileScreen
 
+@ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @Composable
 fun Navigation(navController: NavHostController){
@@ -31,6 +36,7 @@ fun Navigation(navController: NavHostController){
         composable(route = Screen.EcommerceScreen.route) {
             EcommerceHomeScreen(navController = navController)
         }
+        
         composable(
             route = Screen.EcommerceProductScreen.route + "/{productId}",
             arguments = listOf(
@@ -41,6 +47,14 @@ fun Navigation(navController: NavHostController){
         ) {
             val id = it.arguments?.getInt("productId")
             ProductScreen(navController, id!!)
+        }
+        
+        composable(route = Screen.SignupScreen.route) {
+            SignupScreen(navController = navController)
+        }
+
+        composable(route = Screen.LoginScreen.route) {
+            LoginScreen(navController = navController)
         }
     }
 }
