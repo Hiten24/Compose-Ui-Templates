@@ -204,7 +204,9 @@ fun AmountTextField(value: String, onValueChange: (String) -> Unit, placeholder:
 
 @ExperimentalMaterialApi
 @Composable
-fun PayButton(modifier: Modifier=Modifier,onClick: () -> Unit) {
+fun CustomizedButton(modifier: Modifier=Modifier,
+                     text:String,
+                     onClick: () -> Unit) {
 
     Column(
         modifier = modifier
@@ -218,7 +220,7 @@ fun PayButton(modifier: Modifier=Modifier,onClick: () -> Unit) {
             modifier = Modifier.fillMaxWidth(),
             contentPadding = PaddingValues(16.dp)
         ) {
-            Text(text = "Pay")
+            Text(text = text)
         }
     }
 
