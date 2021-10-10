@@ -21,7 +21,9 @@ val screens = listOf(
     ScreenNames("Chat Screen", Screen.ChatScreen.route),
     ScreenNames("Profile Screen", Screen.ProfileScreen.route),
     ScreenNames("Ecommerce Ui", Screen.EcommerceScreen.route),
-    ScreenNames("Login Signup", Screen.SignupScreen.route)
+    ScreenNames("Login Signup", Screen.SignupScreen.route),
+    ScreenNames("Payment Screen", Screen.PaymentScreen.route),
+
 )
 
 @ExperimentalMaterialApi
