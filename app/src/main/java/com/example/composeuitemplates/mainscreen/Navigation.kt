@@ -14,6 +14,7 @@ import com.example.composeuitemplates.presentation.ecommerce_ui.EcommerceHomeScr
 import com.example.composeuitemplates.presentation.ecommerce_ui.ProductScreen
 import com.example.composeuitemplates.presentation.login_signup_ui.LoginScreen
 import com.example.composeuitemplates.presentation.login_signup_ui.SignupScreen
+import com.example.composeuitemplates.presentation.payment_ui.PaymentScreen
 import com.example.composeuitemplates.presentation.profile_ui.ProfileScreen
 
 @ExperimentalFoundationApi
@@ -62,7 +63,9 @@ fun Navigation(navController: NavHostController){
             route = Screen.PaymentScreen.route,
             startDestination = PaymentScreens.AmountScreen.route
         ) {
-
+            composable(PaymentScreens.AmountScreen.route){
+                PaymentScreen()
+            }
         }
     }
 }
