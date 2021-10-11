@@ -1,3 +1,7 @@
+
+![compose-ui-mockup](https://user-images.githubusercontent.com/48350702/136767571-2dd05328-28bc-4eb0-bfde-f371ad504261.jpg)
+
+
 <p align="center"><img src="https://user-images.githubusercontent.com/48350702/136327368-98272ce0-a1c5-4b61-89fc-32f2350a84ed.png" width="120"></p>
 <h1 align="center">Compose UI Templates</h1>
 <p align="center">A repository which contains collection of Android Jetpack Compose UI templates which will help you to build compose app quickly.</p>
