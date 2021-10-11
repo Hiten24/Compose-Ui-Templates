@@ -1,5 +1,5 @@
 
-<p align="center"><img src="https://user-images.githubusercontent.com/48350702/136800873-b3c6f126-bae6-4008-9448-275f42d41151.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/48350702/136816405-a74ff0e7-9f6c-4d8d-a374-21f6ed6ff904.jpg"></p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/48350702/136327368-98272ce0-a1c5-4b61-89fc-32f2350a84ed.png" width="120"></p>
 <h1 align="center">Compose UI Templates</h1>
