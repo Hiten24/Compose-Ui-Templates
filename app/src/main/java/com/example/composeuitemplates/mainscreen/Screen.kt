@@ -8,4 +8,10 @@ sealed class Screen(val route: String) {
     object EcommerceProductScreen: Screen("ecommerce_product_screen")
     object SignupScreen: Screen("signup_screen")
     object LoginScreen: Screen("login_screen")
+    object PaymentScreen:Screen("payment_screen")
+}
+
+sealed class PaymentScreens(val route: String){
+    object AmountScreen:PaymentScreens("payment_amount")
+    object SuccessScreen:PaymentScreens("payment_success")
 }
