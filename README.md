@@ -1,6 +1,5 @@
 
-![compose-ui-mockup](https://user-images.githubusercontent.com/48350702/136767571-2dd05328-28bc-4eb0-bfde-f371ad504261.jpg)
-
+<p align="center"><img src="https://user-images.githubusercontent.com/48350702/136800873-b3c6f126-bae6-4008-9448-275f42d41151.png"></p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/48350702/136327368-98272ce0-a1c5-4b61-89fc-32f2350a84ed.png" width="120"></p>
 <h1 align="center">Compose UI Templates</h1>
