@@ -17,6 +17,7 @@ import com.example.composeuitemplates.presentation.login_signup_ui.SignupScreen
 import com.example.composeuitemplates.presentation.payment_ui.PaymentScreen
 import com.example.composeuitemplates.presentation.payment_ui.SuccessScreen
 import com.example.composeuitemplates.presentation.profile_ui.ProfileScreen
+import com.example.composeuitemplates.presentation.profile_ui_2.ProfileScreen2
 
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
@@ -34,6 +35,10 @@ fun Navigation(navController: NavHostController){
         }
         composable(route = Screen.ProfileScreen.route){
             ProfileScreen(navController = navController)
+        }
+
+        composable(route = Screen.ProfileScreen2.route){
+            ProfileScreen2(navController = navController)
         }
 
         composable(route = Screen.EcommerceScreen.route) {

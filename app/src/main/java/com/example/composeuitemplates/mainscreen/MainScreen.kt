@@ -20,6 +20,7 @@ data class ScreenNames(
 val screens = listOf(
     ScreenNames("Chat Screen", Screen.ChatScreen.route),
     ScreenNames("Profile Screen", Screen.ProfileScreen.route),
+    ScreenNames("Profile Screen 2", Screen.ProfileScreen2.route),
     ScreenNames("Ecommerce Ui", Screen.EcommerceScreen.route),
     ScreenNames("Login Signup", Screen.SignupScreen.route),
     ScreenNames("Payment Screen", Screen.PaymentScreen.route),
