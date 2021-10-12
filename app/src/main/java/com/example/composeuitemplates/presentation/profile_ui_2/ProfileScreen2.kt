@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.focus.FocusRequester.Companion.createRefs
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -21,11 +23,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+//import androidx.constraintlayout.solver.state.Dimension
 import androidx.constraintlayout.compose.ConstraintLayout
+//import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
 import com.example.composeuitemplates.R
 import com.example.composeuitemplates.ui.theme.*
+import kotlinx.coroutines.NonDisposableHandle.parent
 
 @Composable
 fun ProfileScreen2(navController: NavController?) {
@@ -88,7 +93,7 @@ fun ProfileScreenUI() {
                             top.linkTo(parent.top)
                             start.linkTo(parent.start)
                         }
-                        .padding(start = 15.dp),
+                        .padding(start = 15.dp,bottom = 20.dp),
                     fontFamily = PoppinsFontFamily,
                     fontWeight = FontWeight.Bold,
                     fontSize = 30.sp,
@@ -96,7 +101,7 @@ fun ProfileScreenUI() {
                 )
 
                 Image(
-                    painter = painterResource(id = R.drawable.gojo),
+                    painter = painterResource(id = R.drawable.logo4),
                     modifier = Modifier
                         .clip(RoundedCornerShape(20.dp))
                         .height(120.dp)
@@ -106,7 +111,7 @@ fun ProfileScreenUI() {
                             start.linkTo(parent.start)
                             end.linkTo(parent.end)
                         },
-                    contentDescription = "Profile Image"
+                    contentDescription = "Profile Image", contentScale = ContentScale.Crop
                 )
 
                 Text(
@@ -125,7 +130,7 @@ fun ProfileScreenUI() {
                 )
 
                 Text(
-                    text = "A Passionate Android Developer Who have lot of interest in mobile & new technologies",
+                    text = "A Passionate Android Developer\nInstagram :- @the_selfmadecoder",
                     modifier = Modifier
                         .padding(start = 5.dp, end = 5.dp)
                         .constrainAs(txtBio) {
@@ -226,13 +231,18 @@ fun ProfileScreenUI() {
             val (post1, post2, post3) = createRefs()
 
             Image(
-                painter = painterResource(id = R.drawable.gojo),
+                painter = painterResource(id = R.drawable.pi1),
                 contentDescription = "Post 1",
                 modifier = Modifier
                     .fillMaxWidth(0.48f)
                     .padding(5.dp)
                     .height(300.dp)
-                    .clip(RoundedCornerShape(15.dp))
+//                    .clip(RoundedCornerShape(15.dp))
+                    .shadow(
+                        elevation = 5.dp,
+                        shape = RoundedCornerShape(16.dp),
+                        clip = true
+                    )
                     .constrainAs(post1) {
                         top.linkTo(parent.top)
                         start.linkTo(parent.start)
@@ -241,12 +251,17 @@ fun ProfileScreenUI() {
             )
 
             Image(
-                painter = painterResource(id = R.drawable.gojo),
+                painter = painterResource(id = R.drawable.pi2),
                 contentDescription = "Post 2",
                 modifier = Modifier
                     .fillMaxWidth(0.48f)
                     .padding(5.dp)
-                    .clip(RoundedCornerShape(15.dp))
+//                    .clip(RoundedCornerShape(15.dp))
+                    .shadow(
+                        elevation = 5.dp,
+                        shape = RoundedCornerShape(16.dp),
+                        clip = true
+                    )
                     .constrainAs(post2) {
                         top.linkTo(post1.top)
                         end.linkTo(parent.end)
@@ -254,16 +269,20 @@ fun ProfileScreenUI() {
                         start.linkTo(post1.end)
                         height = Dimension.fillToConstraints
                     }, contentScale = ContentScale.Crop
-
             )
 
             Image(
-                painter = painterResource(id = R.drawable.gojo),
-                contentDescription = "Post 2",
+                painter = painterResource(id = R.drawable.pi3),
+                contentDescription = "Post 3",
                 modifier = Modifier
                     .fillMaxWidth(0.48f)
                     .padding(5.dp)
-                    .clip(RoundedCornerShape(15.dp))
+//                    .clip(RoundedCornerShape(15.dp))
+                    .shadow(
+                        elevation = 5.dp,
+                        shape = RoundedCornerShape(16.dp),
+                        clip = true
+                    )
                     .constrainAs(post3) {
                         bottom.linkTo(post1.bottom)
                         top.linkTo(post2.bottom)
@@ -272,7 +291,6 @@ fun ProfileScreenUI() {
                         height = Dimension.fillToConstraints
                     },
                 contentScale = ContentScale.Crop
-
             )
 
         }
