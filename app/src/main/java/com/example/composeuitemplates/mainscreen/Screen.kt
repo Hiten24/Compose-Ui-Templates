@@ -10,6 +10,7 @@ sealed class Screen(val route: String) {
     object SignupScreen: Screen("signup_screen")
     object LoginScreen: Screen("login_screen")
     object PaymentScreen:Screen("payment_screen")
+    object BottomNavigationScreen: Screen("bottom_navigation_screen")
 }
 
 sealed class PaymentScreens(val route: String){

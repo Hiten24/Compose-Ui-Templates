@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
+import com.example.composeuitemplates.presentation.bottomNavigationScreen.BottomNavigationScreen
 import com.example.composeuitemplates.presentation.chat_ui.ChatScreen
 import com.example.composeuitemplates.presentation.ecommerce_ui.EcommerceHomeScreen
 import com.example.composeuitemplates.presentation.ecommerce_ui.ProductScreen
@@ -29,6 +30,9 @@ fun Navigation(navController: NavHostController){
     ){
         composable(route = Screen.MainScreen.route){
             MainScreen(navController = navController)
+        }
+        composable(route = Screen.BottomNavigationScreen.route) {
+            BottomNavigationScreen()
         }
         composable(route = Screen.ChatScreen.route){
             ChatScreen(navController = navController)
@@ -64,6 +68,7 @@ fun Navigation(navController: NavHostController){
         composable(route = Screen.LoginScreen.route) {
             LoginScreen(navController = navController)
         }
+
 
         navigation(
             route = Screen.PaymentScreen.route,
