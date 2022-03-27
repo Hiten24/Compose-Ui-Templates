@@ -11,6 +11,7 @@ sealed class Screen(val route: String) {
     object LoginScreen: Screen("login_screen")
     object PaymentScreen:Screen("payment_screen")
     object BottomNavigationScreen: Screen("bottom_navigation_screen")
+    object TwitterClone: Screen("twitter_clone")
 }
 
 sealed class PaymentScreens(val route: String){
