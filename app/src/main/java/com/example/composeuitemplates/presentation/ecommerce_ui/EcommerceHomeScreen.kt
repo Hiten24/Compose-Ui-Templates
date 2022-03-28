@@ -95,7 +95,7 @@ fun SearchSection() {
         singleLine = true,
         trailingIcon = {
             Icon(
-                painter = painterResource(id = R.drawable.ic_search_normal_1),
+                painter = painterResource(id = R.drawable.ic_search),
                 contentDescription = null
             )
         }
