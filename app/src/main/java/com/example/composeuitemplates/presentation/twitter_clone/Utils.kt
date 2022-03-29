@@ -2,9 +2,11 @@ package com.example.composeuitemplates.presentation.twitter_clone
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import coil.compose.rememberImagePainter
 import com.example.composeuitemplates.R
+import com.example.composeuitemplates.presentation.chat_ui.username
 
 val menuList = listOf(
     SingleMenuItem(
@@ -59,74 +61,92 @@ val bottomNavItems = listOf(
 
 val feeds = listOf(
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
+        username = "Hiten Chwda",
+        userid= "chawda_hiten",
         text = "I love Compose UI templates",
         is_liked = true,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
+        username = "Biren Nayak",
+        userid = "birennayak",
         text = "Good morning",
         is_liked = true,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
         text = "What a lovely day, is it?",
+        username = "Dishant Gandhi",
+        userid = "gandhi_dishant",
         is_liked = true,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     ),Tweet(
-        userImage = painterResource(R.drawable.gojo),
+        userImage = "R.drawable.gojo",
         text = "Did you guys saw Jujutsu Kaisen 0? how was I looking?",
+        username = "Satoru Gojo",
+        userid = "gojo",
         is_liked = true,
-        like = 10000000,
-        comment = 100000,
-        retweet = 1000
+        like = "1M",
+        comment = "10k",
+        retweet = "1k"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
         text = "Spiderman No way Home is one of the best spiderman movies every mad, change my mind",
+        username = "Marvel fan",
+        userid = "some_marvel_fan",
         is_liked = true,
-        like = 9000000,
-        comment = 10000,
-        retweet = 100
+        like = "90k",
+        comment = "10k",
+        retweet = "100"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
         text = "Eagerly waiting for Thor 4 trailer",
+        username = "Jane Foster",
+        userid = "new_thor",
         is_liked = false,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
         text = "Long day coding",
+        username = "Droid City",
+        userid = "droidcity",
         is_liked = true,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
         text = "Peter Parker 🕷",
+        username = "I am Spiderman",
+        userid = "peter_parker",
         is_liked = false,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     ),
     Tweet(
-        userImage = rememberImagePainter("https://picsum.photos/200"),
+        userImage = "https://picsum.photos/200",
+        username = "Eren Yeager",
+        userid = "ereh",
         text = "Mikasa Ackerman",
         is_liked = true,
-        like = 36,
-        comment = 10,
-        retweet = 100
+        like = "36",
+        comment = "10",
+        retweet = "100"
     )
 )

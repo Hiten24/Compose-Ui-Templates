@@ -1,15 +1,12 @@
 package com.example.composeuitemplates.presentation.twitter_clone
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -43,7 +40,7 @@ import kotlinx.coroutines.launch
 fun TwitterClone(navController: NavController?=null){
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    val navController = rememberNavController()
+    val navHostController = rememberNavController()
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = { topAppBar(scope, scaffoldState) },
@@ -53,23 +50,26 @@ fun TwitterClone(navController: NavController?=null){
             }
         },
         bottomBar = {
-            bottomAppbar(navController)
+            bottomAppbar(navHostController)
         }
     ) {
-        NavHost(navController = navController, startDestination = "Home"){
-            composable(route = "Home"){
-                HomeScreen()
-            }
-            composable(route = "Search"){
-                SearchScreen()
-            }
-            composable(route = "Notifications"){
-                NotificationScreen()
-            }
-            composable(route = "Messages"){
-                MessageScreen()
+        Box(modifier = Modifier.padding(it)) {
+            NavHost(navController = navHostController, startDestination = "Home"){
+                composable(route = "Home"){
+                    HomeScreen()
+                }
+                composable(route = "Search"){
+                    SearchScreen()
+                }
+                composable(route = "Notifications"){
+                    NotificationScreen()
+                }
+                composable(route = "Messages"){
+                    MessageScreen()
+                }
             }
         }
+
     }
 }
 
@@ -99,13 +99,17 @@ fun topAppBar(coroutineScope: CoroutineScope, scaffoldState: ScaffoldState){
                 Image(
                     painter = painterResource(R.drawable.gojo),
                     contentDescription = null,
-                    modifier = Modifier.clip(CircleShape).size(42.dp)
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .size(42.dp)
                 )
             }
         },
         backgroundColor = Color.White,
         contentColor = twitterBlack,
-        modifier = Modifier.fillMaxWidth().padding(6.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(6.dp),
         actions = {
             Icon(
                 imageVector = Icons.Outlined.AutoAwesome,
@@ -139,7 +143,9 @@ fun drawerContent(){
             Image(
                 painter = painterResource(R.drawable.gojo),
                 contentDescription = null,
-                modifier = Modifier.clip(CircleShape).size(40.dp)
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .size(40.dp)
             )
             Text(
                 text = "Gojo Satoru",
@@ -158,7 +164,9 @@ fun drawerContent(){
                 )
             )
             Row(
-                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp),
                 horizontalArrangement = Arrangement.Start
             ){
                 Text(
@@ -238,7 +246,9 @@ fun drawerContent(){
         Divider()
         Spacer(modifier = Modifier.height(16.dp))
         Row(
-            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
