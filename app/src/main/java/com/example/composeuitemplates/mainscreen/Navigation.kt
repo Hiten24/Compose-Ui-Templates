@@ -19,6 +19,7 @@ import com.example.composeuitemplates.presentation.payment_ui.PaymentScreen
 import com.example.composeuitemplates.presentation.payment_ui.SuccessScreen
 import com.example.composeuitemplates.presentation.profile_ui.ProfileScreen
 import com.example.composeuitemplates.presentation.profile_ui_2.ProfileScreen2
+import com.example.composeuitemplates.presentation.twitter_clone.TwitterClone
 
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
@@ -67,6 +68,10 @@ fun Navigation(navController: NavHostController){
 
         composable(route = Screen.LoginScreen.route) {
             LoginScreen(navController = navController)
+        }
+
+        composable(route = Screen.TwitterClone.route){
+            TwitterClone(navController)
         }
 
 
